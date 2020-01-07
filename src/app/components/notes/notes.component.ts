@@ -7,14 +7,15 @@ import { INote } from '../interfaces';
   styleUrls: ['./notes.component.css']
 })
 export class NotesComponent {
-  public notes: INote[] = [{title: 'Title', body: 'This is a test.'}];
+  public notes: INote[] = [];
 
   public addNote(note: INote) {
     this.notes.push(note);
   }
 
   public deleteNote(note: INote) {
-    // this.notes.splice(note, 1);
+    var index = this.notes.indexOf(note);
+    this.notes.splice(index, 1);
   }
 
   // TODO: add a button to the note component that will delete the note.

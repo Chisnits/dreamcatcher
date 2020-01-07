@@ -1,2 +1,3 @@
-<input />
-<button (click)="save()">Save</button>
+<input #title type="text" placeholder="Enter Title"/>
+<input #body type="text" placeholder="Enter Body"/>
+<button (click)="save({title: title.value, body: body.value})">Save</button>

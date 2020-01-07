@@ -10,12 +10,8 @@ export class NewNoteComponent {
   @Output() public saved = new EventEmitter<INote>(); 
 
   
-  public save() {
-    const note: INote = {
-      title: 'Hey I work',
-      body: 'I am the new note'
-    };
-
+  public save(note) {
+    console.log(note);
     this.saved.emit(note);
   }
 }
