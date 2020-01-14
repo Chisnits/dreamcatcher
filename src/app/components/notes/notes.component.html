@@ -1,7 +1,7 @@
 <app-new-note (saved)="addNote($event)"></app-new-note>
 
-<div *ngFor="let note of notes">
-  <a (click)="deleteNote($event)" href="#/">X</a>
+<div *ngFor="let note of notes; let index = index;">
+  <a (click)="deleteNote(index)" href="#/">X</a>
   <h1>{{note.title}}</h1>
      <p>{{note.body}}</p>
 </div>
