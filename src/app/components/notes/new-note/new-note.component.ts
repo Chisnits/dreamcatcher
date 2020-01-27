@@ -17,7 +17,6 @@ export class NewNoteComponent {
     this.showBody = true;
   }
 
-  
   public save(note) {
     this.saved.emit(note);
     this.state = NewNoteState.NotActive;

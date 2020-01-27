@@ -1,4 +1,5 @@
 <app-new-note (saved)="addNote($event)"></app-new-note>
+<h1>{{todaydate}}</h1>
 
 <div *ngFor="let note of notes; let index = index;">
   <a (click)="deleteNote(index)" href="#/">X</a>
