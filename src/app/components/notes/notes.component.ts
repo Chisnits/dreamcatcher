@@ -8,21 +8,20 @@ import { NotesService } from '../../services/notes.service';
   styleUrls: ['./notes.component.css'],
 })
 export class NotesComponent {
+  public notes: INote[] = [];
+
   constructor(private NotesService: NotesService) {}
 
   ngOnInit() {
     this.getAllNotes();
   }
   
-  public notes: INote[] = [];
-
-  public addNote(note: INote) {
-    this.notes.push(note);
+  public async addNote(note: INote) {
+    return await this.NotesService.addNote(this.notes, note);
   }
 
-  public deleteNote(index: number): void {
-    // this.NotesService.deleteNote(index);
-    this.notes.splice(index, 1);
+  public async deleteNote(index: number): Promise<INote[]> {
+    return await this.NotesService.deleteNote(this.notes, index);
 
     // peformance concerns with rerendering the entire view. -> trackBy -> Index
     // Reflow -> steps to recalculate -> janking -> missing frames.

@@ -8,8 +8,6 @@ export class NotesService {
 
   constructor() { }
 
-  // public notes: INote[] = [];
-
   public async getNotes() {
     return [
       {
@@ -23,11 +21,11 @@ export class NotesService {
   ]
   }
 
-  // public addNote(note: INote) {
-  //   this.notes.push(note);
-  // }
+  public addNote(notes: INote[], note: INote) {
+    return notes.push(note);
+  }
 
-  // public deleteNote(index: number): void {
-  //   this.notes.splice(index, 1);
-  // }
+  public deleteNote(notes: INote[], index: number) {
+    return notes.splice(index, 1);
+  }
 }
